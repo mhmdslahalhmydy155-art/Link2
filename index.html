@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>هدية لأحلى فاطمة بالكون ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      background: linear-gradient(rgba(15, 5, 25, 0.75), rgba(35, 10, 50, 0.75)), 
+                  url('https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Amiri', serif;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .space-bg {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      overflow: hidden;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .stars, .stars2 {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      width: 100%; height: 100%;
+      display: block;
+    }
+
+    .stars {
+      background: transparent;
+      box-shadow: 1747px 355px #d8b4fe, 122px 1452px #f472b6, 541px 852px #c084fc, 1021px 212px #e879f9, 1422px 941px #d8b4fe, 452px 1241px #f472b6, 1852px 142px #e879f9, 951px 1852px #d8b4fe, 214px 741px #f472b6, 1352px 1521px #c084fc;
+      width: 2px; height: 2px;
+      animation: animStar 45s linear infinite;
+    }
+    .stars::after {
+      content: " ";
+      position: absolute;
+      top: 2000px; width: 2px; height: 2px;
+      box-shadow: 1747px 355px #d8b4fe, 122px 1452px #f472b6, 541px 852px #c084fc, 1021px 212px #e879f9, 1422px 941px #d8b4fe, 452px 1241px #f472b6, 1852px 142px #e879f9, 951px 1852px #d8b4fe, 214px 741px #f472b6, 1352px 1521px #c084fc;
+    }
+
+    .stars2 {
+      background: transparent;
+      box-shadow: 452px 852px #e879f9, 1521px 412px #d8b4fe, 852px 1747px #f472b6, 212px 1141px #c084fc, 1141px 212px #d8b4fe;
+      width: 3px; height: 3px;
+      animation: animStar 90s linear infinite;
+    }
+    .stars2::after {
+      content: " ";
+      position: absolute;
+      top: 2000px; width: 3px; height: 3px;
+      box-shadow: 452px 852px #e879f9, 1521px 412px #d8b4fe, 852px 1747px #f472b6, 212px 1141px #c084fc, 1141px 212px #d8b4fe;
+    }
+
+    @keyframes animStar {
+      from { transform: translateY(0px); }
+      to { transform: translateY(-2000px); }
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 24px;
+      padding: 40px 25px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 { font-family: 'Reem Kufi', sans-serif; color: #f472b6; margin-bottom: 15px; font-size: 24px; text-shadow: 0 2px 15px rgba(244,114,182,0.4); }
+    .lock-icon { font-size: 65px; cursor: pointer; margin: 15px 0; transition: transform 0.3s; display: inline-block; }
+    .lock-icon:hover { transform: scale(1.1); }
+    
+    .countdown-box {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .time-unit {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px 15px;
+      border-radius: 12px;
+      min-width: 65px;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .time-unit span {
+      display: block;
+      font-size: 22px;
+      font-weight: bold;
+      color: #d8b4fe;
+      font-family: 'Reem Kufi', sans-serif;
+    }
+    .time-unit label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .timer-text { font-size: 15px; color: #f472b6; margin-bottom: 5px; font-weight: bold; }
+    .message-content { display: none; font-size: 18px; line-height: 1.9; color: #fff; text-align: justify; margin-top: 20px; }
+    
+    .alert-msg {
+      font-size: 15px;
+      color: #f472b6;
+      font-weight: bold;
+      height: 25px;
+      margin-top: 10px;
+      transition: opacity 0.3s ease;
+    }
+
+    .floating-heart {
+      position: absolute;
+      color: #f472b6;
+      font-size: 22px;
+      user-select: none;
+      pointer-events: none;
+      animation: floatUp 1.5s ease-out forwards;
+      z-index: 10;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-130px) scale(1.6); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="space-bg">
+    <div class="stars"></div>
+    <div class="stars2"></div>
+  </div>
+
+  <div class="card">
+    <h1>هدية لأحلى فاطمة بالكون 🤍</h1>
+    <div class="lock-icon" id="lock" title="اضغط هنا">🔒</div>
+    
+    <div id="countdown-container">
+      <div class="timer-text">الوقت المتبقي لفتح الهدية:</div>
+      <div class="countdown-box">
+        <div class="time-unit">
+          <span id="hours">00</span>
+          <label>ساعة</label>
+        </div>
+        <div class="time-unit">
+          <span id="minutes">00</span>
+          <label>دقيقة</label>
+        </div>
+        <div class="time-unit">
+          <span id="seconds">00</span>
+          <label>ثانية</label>
+        </div>
+      </div>
+    </div>
+    
+    <div class="alert-msg" id="alertMsg"></div>
+
+    <div class="message-content" id="message">
+      <p><b>إلى كشمش قلبي وفاطمة أيامي..</b> ❤️</p><br>
+      <p>اليوم 11/11، والناس كلها تباوع لهذا التاريخ وتشوفه مميز، بس الصراحة بالنسبة إلي هالتاريخ ماله أي قيمة قبال وجودج. أنتي التاريخ واللحظة المميزة بكل أيامي، وأهم بشر بالدنيا كلها بدون منافسة.</p><br>
+      <p>من دخلتي حياتي وغيرتي كلشي بيها للأحلى.. كل موقف حلو وكل لحظة دافية مرت عليّ جانت بسببج وبسبب وجودج الجميل. أنتي ألطف شخص بهالعالم، وقلبج الطيب أبيض وصافي لدرجة يخلي كلشي حولج يبتسم.</p><br>
+      <p>ماكو أي بنية بالكون تقدر تقارن بيج، ولا اكو أحد يقدر ياخذ مكانج أو يوصل لجمالج وجمال روحج اللي تضوي دنيتي. أنتي مو بس جزء من حياتي، أنتي استثنائي الحلو وكل حياتي. ربي يخليج إلي يا أحلى كشمشاية وما يحرمك من قلبي. ✨</p>
+    </div>
+  </div>
+
+  <!-- ملفات الصوت المباشرة -->
+  <audio id="pianoAudio" loop src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf756.mp3?filename=gentle-piano-10874.mp3"></audio>
+  <audio id="songAudio" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c363989c.mp3?filename=romantic-love-song-10250.mp3"></audio>
+
+  <script>
+    const targetDate = new Date('2026-11-11T11:11:00+03:00').getTime();
+
+    const hoursEl = document.getElementById('hours');
+    const minutesEl = document.getElementById('minutes');
+    const secondsEl = document.getElementById('seconds');
+    const countdownContainer = document.getElementById('countdown-container');
+    const message = document.getElementById('message');
+    const lock = document.getElementById('lock');
+    const alertMsg = document.getElementById('alertMsg');
+    const pianoAudio = document.getElementById('pianoAudio');
+    const songAudio = document.getElementById('songAudio');
+
+    let isUnlocked = false;
+
+    function createHeart(x, y) {
+      const heart = document.createElement('div');
+      heart.classList.add('floating-heart');
+      heart.innerHTML = '❤️';
+      heart.style.left = x + 'px';
+      heart.style.top = y + 'px';
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 1500);
+    }
+
+    document.body.addEventListener('click', (e) => {
+      createHeart(e.clientX, e.clientY);
+
+      if (!isUnlocked && pianoAudio.paused) {
+        pianoAudio.play().catch(err => console.log(err));
+      }
+    });
+
+    function updateCountdown() {
+      if (isUnlocked) return;
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference <= 0) {
+        unlockSurprise();
+        return;
+      }
+
+      const totalSeconds = Math.floor(difference / 1000);
+      const hours = Math.floor(totalSeconds / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+
+      hoursEl.textContent = String(hours).padStart(2, '0');
+      minutesEl.textContent = String(minutes).padStart(2, '0');
+      secondsEl.textContent = String(seconds).padStart(2, '0');
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    function unlockSurprise() {
+      if (isUnlocked) return;
+      isUnlocked = true;
+      lock.innerHTML = '🔓';
+      countdownContainer.style.display = 'none';
+      alertMsg.style.display = 'none';
+      message.style.display = 'block';
+      
+      pianoAudio.pause();
+      pianoAudio.currentTime = 0;
+      songAudio.play().catch(err => console.log(err));
+    }
+
+    let timeoutId;
+    lock.addEventListener('click', (e) => {
+      e.stopPropagation();
